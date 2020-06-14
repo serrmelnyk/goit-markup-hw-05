@@ -88,6 +88,10 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -136,6 +140,10 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .link:hover,
 .auth-nav .link:focus {
@@ -275,6 +283,10 @@ img {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .specialization-list .link:hover,
 .specialization-list .link:focus {
@@ -367,6 +379,10 @@ img {
   fill: #afb1b8;
   margin-right: 10px;
   margin-bottom: 24px;
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-team:hover {
   background-color: var(--accent-color);
@@ -396,6 +412,10 @@ img {
   border: 1px solid #afb1b8;
   fill: #afb1b8;
   margin-right: 10px;
+
+  transition-property: fill, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-customers:hover,
 .icon-customers:focus {
@@ -434,6 +454,10 @@ footer {
   font-size: 14px;
   line-height: 1.71;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-list .link:hover,
 .adress-list .link:focus {
@@ -490,6 +514,10 @@ footer {
   fill: var(--white-color);
   background: rgba(255, 255, 255, 0.1);
   margin-right: 10px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-footer:hover {
   background-color: var(--accent-color);
@@ -513,6 +541,10 @@ footer {
   font-size: 16px;
   line-height: 1.63;
   text-align: center;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-list .link:hover,
 .filter-list .link:focus {
@@ -539,6 +571,8 @@ footer {
 }
 .fon {
   position: relative;
+
+  overflow: hidden;
 }
 .fon::before {
   display: inline-block;
@@ -547,7 +581,33 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
+  /* opacity: 0; */
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  transform: translateY(100%);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.item:hover .fon::before {
+  transform: translateY(0);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list .item:hover .overlay {
+  transform: translateY(0);
 }
 .portfolio-list .title {
   color: var(--title-text-color);
@@ -572,13 +632,13 @@ footer {
 .portfolio-list .link {
   text-decoration: none;
 }
+
 .portfolio-list .text {
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
 
   color: var(--white-color);
   margin: 0;
@@ -618,10 +678,6 @@ footer {
 .portfolio-list li:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-.text:hover {
-  opacity: 1;
-}
-.fon:hover::before {
-  opacity: 1;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
